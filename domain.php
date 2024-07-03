@@ -8,7 +8,7 @@ function readDomaninsFromFile($filename)
         $file = fopen($filename, "r");
 
         while(($line = fgets($file)) !== false){
-            $parts = explode(' , ',trim($line));
+            $parts = explode(',',trim($line));
 
             if(count($parts) == 2) {
                 $domain = trim($parts[0]);
@@ -19,7 +19,7 @@ function readDomaninsFromFile($filename)
 
                 $domains[] = [
                     'domain' => $domain,
-                    'expireDate' => $expireDateFormatted,
+                    'expireDate' => $expireDate,
                     'expireDateFormatted' => $expireDateFormatted
                 ];
             }
